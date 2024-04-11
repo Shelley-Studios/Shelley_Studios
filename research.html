@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Shelley Bionics Login</title>
+        <style>
+            body{
+               background-color:#f3f3f3;
+               text-align:center;
+            font-family:'Lucida Grande', monospace, 'Help me', Verdana, sans-serif;
+         }
+            @font-face{
+            font-family: Vinnie;
+            src: url(VinnieBoombahNf-WY2E.ttf)
+         }
+         @font-face{
+            font-family: 'Help me';
+            src: url(HelpMe-Yz7Lq.ttf)
+         }
+         p{
+            margin-left: 425px;
+            margin-right: 425px;
+            margin-top: 10px;
+            font-size: 60px;
+         }
+         label{
+            font-size:50px;
+            display:block;
+         }
+         input{
+            font-size:30px;
+            font-family:'Lucia Grande', monospace;
+         }
+         h1{
+            color:#674ea7;
+            font-size:75px
+         }
+         h2{
+            color:#d9d2e9;
+            font-size:30px
+         }
+         img{
+            width:50px;
+            height:50px;
+         }
+        </style>
+    </head>
+    <body>
+       <h1><img src="Bionics.png" alt="Shelly Bionics"> Shelley Bionics</h1>
+        <h2>Scientia ipsa potentia est</h2>
+        <p>Login</p>
+        <form action="bionics_home.html" onsubmit="return authenticate()">
+         <input
+         id="username"
+           type="text"
+           placeholder="Enter Username"
+           name="username"
+           required
+         />
+         <br>
+         <input
+         style="margin-top:15px"
+           id="password"
+           type="password"
+           placeholder="Enter Password"
+           name="password"
+           required
+         />
+         <br>
+         <button type="submit" style="font-size:30px; margin-top:15px; font-family:'Lucidia Grande', monospace;">Submit</button>
+       </form>
+       
+       <script>
+       
+       //Following function gets values of the username and password fields and checks to see if they match a hard coded username and password 
+         function authenticate(){
+           var authorised;
+           
+           //get input values
+           var username = document.getElementById("username").value;
+           var password = document.getElementById("password").value;
+           
+           //check to see if the password and username match
+           if(username == "eric_wolfe" && password == "Canis Lupus"){
+             authorised = true;
+           }else{ // username or password do not match
+             authorised = false;
+             //alert user
+             alert("Sorry, username/password is incorrect.");
+           }
+           //return result
+           return authorised;
+         }
+       </script>
+    </body>
+</html>
